@@ -3,7 +3,7 @@
 
 #### Todo:
 
-- [] Add links for the plugins used 
-- [] Add links for the articles
-- [] Add links for the tutorials for Vim
+- Add links for the plugins used 
+- Add links for the articles
+- Add links for the tutorials for Vim
 
