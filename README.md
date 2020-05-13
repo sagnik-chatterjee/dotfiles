@@ -1,6 +1,6 @@
 ### Some of the dotfiles that I use 
 #### A lot of the credit goes to many other people who have shared their dotfiles in order to help us.
-#### Todo:
+
 
 ##### Plugins used :
 - [cpp enhanced syntax](http://github.com/octol/vim-cpp-enhanced-highlight)
