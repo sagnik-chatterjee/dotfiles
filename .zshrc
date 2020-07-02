@@ -120,7 +120,7 @@ function install_powerline_precmd(){
 	precmd_functions +=(powerline_precmd)
 
 }
-
+## The prompt part taken from Anish Athyale : https://github.com/anishathalye
  
 # User customizable options
 # PR_ARROW_CHAR="[some character]"
