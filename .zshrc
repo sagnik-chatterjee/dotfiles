@@ -10,8 +10,10 @@ export ZSH="/home/sagnik/.oh-my-zsh"
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 #ZSH_THEME="ys" ##-->more verbose
 #ZSH_THEME="avit" ##--> good but want powerline 
-ZSH_THEME="agnoster"
-
+#ZSH_THEME="agnoster"
+ZSH_THEME="powerlevel9k/powerlevel9k"
+# Powerlevel9k config
+ 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
@@ -73,6 +75,7 @@ ZSH_THEME="agnoster"
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
+#some powerllevel 9k shit 
 
 # User configuration
 
@@ -120,7 +123,7 @@ function install_powerline_precmd(){
 	precmd_functions +=(powerline_precmd)
 
 }
-## The prompt part taken from Anish Athyale : https://github.com/anishathalye
+
  
 # User customizable options
 # PR_ARROW_CHAR="[some character]"
