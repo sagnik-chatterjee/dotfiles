@@ -11,7 +11,8 @@ export ZSH="/home/sagnik/.oh-my-zsh"
 #ZSH_THEME="ys" ##-->more verbose
 #ZSH_THEME="avit" ##--> good but want powerline 
 #ZSH_THEME="agnoster"
-ZSH_THEME="powerlevel9k/powerlevel9k"
+ZSH_THEME="spaceship"
+#"powerlevel9k/powerlevel9k"
 # Powerlevel9k config
  
 # Set list of themes to pick from when loading at random
@@ -103,10 +104,12 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh
 
-alias python=python3 
+alias python='/usr/bin/python3.8' 
 alias pip=pip3
+alias vim=nvim 
 
-
+##some rust additions 
+export PATH="$HOME/.cargo/bin:$PATH"
 #some more alias we can add the following to our powerline 
 
 function powerline_precmd(){
@@ -283,6 +286,8 @@ function parse_git_detached() {
         echo "${GIT_PROMPT_DETACHED}"
     fi
 }
+
+
 
 # Show different symbols as appropriate for various Git repository states
 function parse_git_state() {
@@ -488,3 +493,4 @@ function TRAPUSR1() {
     zle && zle reset-prompt
 } 
 
+source /home/sagnik/.zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
