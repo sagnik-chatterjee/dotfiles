@@ -26,6 +26,14 @@ shopt -s checkwinsize
 # If set, the pattern "**" used in a pathname expansion context will
 # match all files and zero or more directories and subdirectories.
 #shopt -s globstar
+##making custom chras for root and nonroot users 
+if [[ $(id -u) -eq 0 ]];then 
+  #ps1 for root user 
+  PS1='\t [\u@\h \W]\$'
+else
+  #ps1 for normal user 
+  PS1='[\u@\h \W]\$'
+fi 
 
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
@@ -147,3 +155,25 @@ alias pip=pip3
 
 ##colored output for gcc 
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+
+
+##Make it a great again !!!!!
+if [ -f "$HOME/.bash-git-prompt/gitprompt.sh" ]; then
+    GIT_PROMPT_ONLY_IN_REPO=1
+    GIT_PROMPT_THEME=Solarized	
+    source $HOME/.bash-git-prompt/gitprompt.sh
+fi
+
+##adding to path 
+export PATH=$PATH:$HOME/.local/bin 
+
+#git current branch 
+parse_git_branch() {
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(. *\)/(\1)/' 
+}
+
+
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/sagnik/.sdkman"
+[[ -s "/home/sagnik/.sdkman/bin/sdkman-init.sh" ]] && source "/home/sagnik/.sdkman/bin/sdkman-init.sh"
