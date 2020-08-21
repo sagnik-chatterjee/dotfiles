@@ -40,15 +40,15 @@ This function should only modify configuration layer settings."
      ;; ----------------------------------------------------------------
      ;; auto-completion
      ;; better-defaults
-     
+     ruby
+     ocaml
      c-c++
      haskell
-     javascript
      auto-completion
      emacs-lisp
      git
      helm
-     
+     java 
      ;; lsp
      markdown
      multiple-cursors
@@ -207,9 +207,12 @@ It should only modify the values of Spacemacs settings."
    ;; Press `SPC T n' to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
    dotspacemacs-themes '(spacemacs-dark
+                         farmhouse-dark
+                         cyberpunk
+
                         ;; spacemacs-light
-                         gruvbox
-                         monokai
+                        ;; gruvbox
+                        ;; monokai
                         ;; flatui
                         )
 
@@ -227,11 +230,11 @@ It should only modify the values of Spacemacs settings."
    dotspacemacs-colorize-cursor-according-to-state t
 
    ;; Default font or prioritized list of fonts.
-   dotspacemacs-default-font '("Fira Code"
-                               :size 16.0
+   dotspacemacs-default-font '("Source Code Pro"
+                               :size 18
                                :weight normal
                                :width normal
-                               :powerline-scale 1.1)
+                               :powerline-scale 1.2)
 
    ;; The leader key (default "SPC")
    dotspacemacs-leader-key "SPC"

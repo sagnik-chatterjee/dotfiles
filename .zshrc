@@ -99,3 +99,4 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias python=python3 
 alias show="~/scripts/show.sh"
+source /home/sagnik/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
