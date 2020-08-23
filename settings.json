@@ -1,0 +1,16 @@
+{
+    "workbench.startupEditor": "newUntitledFile",
+    "workbench.colorTheme": "Spacemacs",
+    "editor.fontSize": 18,
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.colorCustomizations": {
+        "statusBar.background" : "#1A1A1A",
+        "statusBar.noFolderBackground" : "#0A0A0D",
+        "statusBar.debuggingBackground": "#511f1f"
+    },
+    "python.pythonPath": "/bin/python3",
+    "python.showStartPage": false
+    
+}
