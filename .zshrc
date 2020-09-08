@@ -10,6 +10,7 @@ export ZSH=$HOME/.oh-my-zsh
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="spaceship"
 
+
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
@@ -99,4 +100,10 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias python=python3 
 alias show="~/scripts/show.sh"
+alias clean="~/scripts/rm_excess.sh"
+alias cptest="~/scripts/grader.sh"
 source /home/sagnik/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+alias deno="/home/sagnik/.deno/bin/deno"
+fpath=(~/.zsh $fpath)
+autoload -Uz compinit 
+compinit -u

@@ -5,8 +5,8 @@
 
 # Input/Output format
 # '#' will be replaced by 1, 2, ...
-IN="input.#.txt"
-OUT="output.#.txt"
+IN="tests/input.#.txt"
+OUT="tests/output.#.txt"
 
 # Limits
 TL=1 # Time limit (in seconds)
