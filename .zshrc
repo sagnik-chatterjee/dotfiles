@@ -8,9 +8,9 @@ export ZSH=$HOME/.oh-my-zsh
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+#ZSH_THEME="robbyrussell"
 ZSH_THEME="spaceship"
-
-
+#ZSH_THEME="hyperzsh"
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
@@ -98,12 +98,29 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+export LS_COLORS="$LS_COLORS:ow=1;34:tw=1;34:"
 alias python=python3 
 alias show="~/scripts/show.sh"
 alias clean="~/scripts/rm_excess.sh"
+alias code=codium
 alias cptest="~/scripts/grader.sh"
+alias lite="~/lite-1.11/lite"
 source /home/sagnik/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-alias deno="/home/sagnik/.deno/bin/deno"
-fpath=(~/.zsh $fpath)
-autoload -Uz compinit 
-compinit -u
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
+ZSH_HIGHLIGHT_PATTERNS=('rm -rf *' 'fg=white,bold,bg=red') # To have commands starting with `rm -rf` in red:
+
+
+#setup step for pure prompt
+#fpath+=$HOME/.zsh/pure
+#autoload -U promptinit;promptinit
+#prompt pure 
+
+
+##virtualenvwrapper 
+export WORKON_HOME=$HOME/.virtualenvs
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+export VIRTUALENVWRAPPER_VIRTUALENV_ARGS=' -p /usr/bin/python3 '
+export PROJECT_HOME=$HOME/projects/
+source /usr/local/bin/virtualenvwrapper.sh
+

@@ -1,1 +1,0 @@
-unoconv -f pdf *.ppt 
