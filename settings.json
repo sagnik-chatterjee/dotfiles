@@ -1,16 +1,26 @@
 {
     "workbench.startupEditor": "newUntitledFile",
-    "workbench.colorTheme": "Spacemacs",
+    "terminal.integrated.shell.linux": "/usr/bin/zsh",
+    "files.autoSave": "afterDelay",
     "editor.fontSize": 18,
-    "editor.suggestSelection": "first",
-    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-    "workbench.iconTheme": "material-icon-theme",
-    "workbench.colorCustomizations": {
-        "statusBar.background" : "#1A1A1A",
-        "statusBar.noFolderBackground" : "#0A0A0D",
-        "statusBar.debuggingBackground": "#511f1f"
-    },
-    "python.pythonPath": "/bin/python3",
-    "python.showStartPage": false
-    
+    "editor.fontFamily": "Fira Code",
+    "editor.fontLigatures": true,
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/node_modules": true,
+        "**/.class":true,
+        "**/a.out":true,//for default c/c++ compiled code 
+      },
+      "python.showStartPage": false,
+      //"workbench.colorTheme": "GitHub Dark",
+      //stuff for changing status bar color 
+      "workbench.colorCustomizations": {
+        "statusBar.background" : "#0278AE",
+        "statusBar.noFolderBackground" : "#1aa6b7",
+        "statusBar.debuggingBackground": "#1aa6b7"
+       }
 }

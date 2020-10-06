@@ -106,6 +106,7 @@ alias clean="~/scripts/rm_excess.sh"
 alias code=codium
 alias cptest="~/scripts/grader.sh"
 alias lite="~/lite-1.11/lite"
+alias chrome=google-chrome 
 source /home/sagnik/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
 ZSH_HIGHLIGHT_PATTERNS=('rm -rf *' 'fg=white,bold,bg=red') # To have commands starting with `rm -rf` in red:
