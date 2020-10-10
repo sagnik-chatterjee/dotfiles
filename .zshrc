@@ -66,6 +66,9 @@ DISABLE_AUTO_UPDATE="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
+alias code=codium 
+alias show=~/scripts/show.sh
+
 plugins=(git
 	zsh-syntax-highlighting 
 	zsh-autosuggestions
