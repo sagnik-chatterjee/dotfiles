@@ -68,10 +68,11 @@ DISABLE_AUTO_UPDATE="true"
 # Add wisely, as too many plugins slow down shell startup.
 alias code=codium 
 alias show=~/scripts/show.sh
-
+alias python=python3.9
+alias calc=gnome-calculator 
+alias chrome=chromium
 plugins=(git
 	zsh-syntax-highlighting 
-	zsh-autosuggestions
 	)
 
 source $ZSH/oh-my-zsh.sh
@@ -101,5 +102,8 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
 export GOPATH=$HOME/usr/local/go
+
+eval "$(dircolors -p | \
+    sed 's/ 4[0-9];/ 01;/; s/;4[0-9];/;01;/g; s/;4[0-9] /;01 /' | \
+    dircolors /dev/stdin)"
