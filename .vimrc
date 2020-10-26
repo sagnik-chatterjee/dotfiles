@@ -30,20 +30,26 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'jiangmiao/auto-pairs'     "for bracket pair matching "
 Plugin 'tomasiser/vim-code-dark'  "some nice standrad colorsheme"
+Plugin 'ayu-theme/ayu-vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'joshdick/onedark.vim'
 Plugin 'bfrg/vim-cpp-modern'
-
+Plugin 'Yggdroot/indentLine'
 
 call vundle#end()
 filetype plugin indent on 
 
-colorscheme onedark 
+set termguicolors
+let ayucolor="dark"
+colorscheme ayu 
 
-let g:airline_theme ='onedark'
+let g:airline_theme ='ayu_dark'
 
 let g:jedi#use_tabs_not_buffers =1 
 
-
-let g:rust_clip_command ='xclip -seldction clipboard'
+"Indentline 
+let g:indentLine_char = '|'
+let g:indentLine_first_char = '|'
+let g:indentLine_showFirstIndentLevel = 1
+let g:indentLine_setColors = 0
