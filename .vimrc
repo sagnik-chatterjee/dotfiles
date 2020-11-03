@@ -9,10 +9,8 @@ set ruler
 highlight Comment ctermfg=green
 set guifont=FiraCode\ 16
 set cursorline 
+set shell=/usr/bin/zsh
 
-set shell=/usr/bin/zsh 
-
-set shortmess+=I 
 
 set mouse+=a
 set noerrorbells visualbell t_vb=
@@ -36,24 +34,40 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'joshdick/onedark.vim'
 Plugin 'bfrg/vim-cpp-modern'
 Plugin 'Yggdroot/indentLine'
+Plugin 'rakr/vim-one'
+Plugin 'drewtempelmeyer/palenight.vim'
 
 call vundle#end()
 filetype plugin indent on 
 
 set termguicolors
-let ayucolor="dark"
-colorscheme ayu 
+"let ayucolor="dark"
+"colorscheme ayu 
+set background=dark
+let g:one_allow_italics=1
+colorscheme one
 
-let g:airline_theme ='ayu_dark'
+"set background=dark
+"colorscheme palenight 
+
+
+"let g:airline_theme ='ayu_dark'
+let g:airline_theme='one'
+"let g:airline_theme="palenight"
 
 let g:jedi#use_tabs_not_buffers =1 
 
 "Indentline 
-let g:indentLine_char = '|'
-let g:indentLine_first_char = '|'
-let g:indentLine_showFirstIndentLevel = 1
-let g:indentLine_setColors = 0
+"let g:indentLine_char = '|'
+"let g:indentLine_first_char = '|'
+"let g:indentLine_showFirstIndentLevel = 1
+"let g:indentLine_setColors = 0
 "Some cursor magic 
 let &t_SI = "\<Esc>[6 q"
 let &t_SR = "\<Esc>[4 q"
 let &t_EI = "\<Esc>[6 q"
+
+"Set javascript thingey's
+let g:javascript_plugin_ngdoc=1
+let g:javascript_plugin_flow=1
+
