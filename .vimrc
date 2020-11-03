@@ -10,7 +10,7 @@ highlight Comment ctermfg=green
 set guifont=FiraCode\ 16
 set cursorline 
 
-set shell=/usr/bin/zsh "use to prevent to access the fish shell"
+set shell=/usr/bin/zsh 
 
 set shortmess+=I 
 
@@ -53,3 +53,7 @@ let g:indentLine_char = '|'
 let g:indentLine_first_char = '|'
 let g:indentLine_showFirstIndentLevel = 1
 let g:indentLine_setColors = 0
+"Some cursor magic 
+let &t_SI = "\<Esc>[6 q"
+let &t_SR = "\<Esc>[4 q"
+let &t_EI = "\<Esc>[6 q"
