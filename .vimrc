@@ -36,7 +36,7 @@ Plugin 'bfrg/vim-cpp-modern'
 Plugin 'Yggdroot/indentLine'
 Plugin 'rakr/vim-one'
 Plugin 'drewtempelmeyer/palenight.vim'
-
+Plugin 'rust-lang/rust.vim'
 
 call vundle#end()
 filetype plugin indent on 
@@ -50,6 +50,9 @@ colorscheme one
 
 "set background=dark
 "colorscheme palenight 
+
+"automatically running rustfmt 
+let g:rustfmt_autosave = 1
 
 
 "let g:airline_theme ='ayu_dark'
