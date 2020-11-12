@@ -37,6 +37,7 @@ Plugin 'Yggdroot/indentLine'
 Plugin 'rakr/vim-one'
 Plugin 'drewtempelmeyer/palenight.vim'
 Plugin 'rust-lang/rust.vim'
+Plugin 'kaicataldo/material.vim', {' branch': 'main'}
 
 call vundle#end()
 filetype plugin indent on 
@@ -44,12 +45,16 @@ filetype plugin indent on
 set termguicolors
 "let ayucolor="dark"
 "colorscheme ayu 
-set background=dark
+"set background=dark
 let g:one_allow_italics=1
 colorscheme one
 
 "set background=dark
 "colorscheme palenight 
+
+"let g:material_theme_style='darker'
+"let g:material_terminal_italics=1
+"colorscheme material
 
 "automatically running rustfmt 
 let g:rustfmt_autosave = 1
