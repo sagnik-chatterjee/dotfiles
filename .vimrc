@@ -7,10 +7,10 @@ set number
 set hlsearch 
 set ruler
 highlight Comment ctermfg=green
-set guifont=FiraCode\ 16
+set guifont=SFMono\ 16
 set cursorline 
-set shell=/usr/bin/zsh
-
+set shell=/usr/bin/bash
+set encoding=utf-8
 
 set mouse+=a
 set noerrorbells visualbell t_vb=
@@ -38,16 +38,20 @@ Plugin 'rakr/vim-one'
 Plugin 'drewtempelmeyer/palenight.vim'
 Plugin 'rust-lang/rust.vim'
 Plugin 'kaicataldo/material.vim', {' branch': 'main'}
-
+Plugin 'neovimhaskell/haskell-vim'
+Plugin 'vim-syntastic/syntastic'
+Plugin 'nvie/vim-flake8'
+Plugin 'Lokaltog/powerline', {'rtp':'powerline/bindings/vim/'}
+Plugin 'scrooloose/nerdtree'
 call vundle#end()
 filetype plugin indent on 
 
 set termguicolors
-"let ayucolor="dark"
-"colorscheme ayu 
-"set background=dark
+let ayucolor="dark"
+colorscheme ayu 
+set background=dark
 let g:one_allow_italics=1
-colorscheme one
+"colorscheme one
 
 "set background=dark
 "colorscheme palenight 
@@ -61,7 +65,7 @@ let g:rustfmt_autosave = 1
 
 
 "let g:airline_theme ='ayu_dark'
-let g:airline_theme='one'
+"let g:airline_theme='one'
 "let g:airline_theme="palenight"
 
 let g:jedi#use_tabs_not_buffers =1 
@@ -79,4 +83,6 @@ let &t_EI = "\<Esc>[6 q"
 "Set javascript thingey's
 let g:javascript_plugin_ngdoc=1
 let g:javascript_plugin_flow=1
+
+let python_highlight_all=1
 
