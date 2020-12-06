@@ -7,9 +7,9 @@ set number
 set hlsearch 
 set ruler
 highlight Comment ctermfg=green
-set guifont=SFMono\ 16
+" set guifont=SFMono\ 16
 set cursorline 
-set shell=/usr/bin/bash
+" set shell=/usr/bin/bash
 set encoding=utf-8
 
 set mouse+=a
@@ -28,47 +28,46 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'jiangmiao/auto-pairs'     "for bracket pair matching "
 Plugin 'tomasiser/vim-code-dark'  "some nice standrad colorsheme"
-Plugin 'ayu-theme/ayu-vim'
+"Plugin 'ayu-theme/ayu-vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'joshdick/onedark.vim'
 Plugin 'bfrg/vim-cpp-modern'
 Plugin 'Yggdroot/indentLine'
 Plugin 'rakr/vim-one'
-Plugin 'drewtempelmeyer/palenight.vim'
-Plugin 'rust-lang/rust.vim'
+"Plugin 'drewtempelmeyer/palenight.vim'
+"Plugin 'rust-lang/rust.vim'
 Plugin 'kaicataldo/material.vim', {' branch': 'main'}
-Plugin 'neovimhaskell/haskell-vim'
+Plugin 'sainnhe/sonokai'
+Plugin 'sainnhe/edge'
+" Plugin 'neovimhaskell/haskell-vim'
 Plugin 'vim-syntastic/syntastic'
-Plugin 'nvie/vim-flake8'
+"Plugin 'nvie/vim-flake8'
 Plugin 'Lokaltog/powerline', {'rtp':'powerline/bindings/vim/'}
 Plugin 'scrooloose/nerdtree'
+
 call vundle#end()
 filetype plugin indent on 
 
-set termguicolors
-let ayucolor="dark"
-colorscheme ayu 
-set background=dark
-let g:one_allow_italics=1
-"colorscheme one
 
-"set background=dark
-"colorscheme palenight 
+"let g:rustfmt_autosave = 1
 
-"let g:material_theme_style='darker'
-"let g:material_terminal_italics=1
-"colorscheme material
-
-"automatically running rustfmt 
-let g:rustfmt_autosave = 1
-
-
-"let g:airline_theme ='ayu_dark'
-"let g:airline_theme='one'
-"let g:airline_theme="palenight"
+let g:airline_theme='bubblegum'
 
 let g:jedi#use_tabs_not_buffers =1 
+
+if has('termiguicolors')
+  set termiguicolors 
+endif 
+colorscheme edge 
+
+let g:edge_style='aura'
+let g:edge_enable_italic=1
+let g:edge_disable_italic_comment=1
+let g:edge_cursor='green'
+
+
+
 
 "Indentline 
 "let g:indentLine_char = '|'
@@ -81,8 +80,8 @@ let &t_SR = "\<Esc>[4 q"
 let &t_EI = "\<Esc>[6 q"
 
 "Set javascript thingey's
-let g:javascript_plugin_ngdoc=1
-let g:javascript_plugin_flow=1
+"let g:javascript_plugin_ngdoc=1
+"let g:javascript_plugin_flow=1
 
-let python_highlight_all=1
+"let python_highlight_all=1
 
