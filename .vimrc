@@ -17,7 +17,7 @@ set noerrorbells visualbell t_vb=
 
 set ignorecase 
 set hidden 
-
+set shortmess+=I
 set laststatus=2
 
 set nocompatible 
