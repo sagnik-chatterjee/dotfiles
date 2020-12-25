@@ -7,14 +7,15 @@ set number
 set hlsearch 
 set ruler
 highlight Comment ctermfg=green
-" set guifont=SFMono\ 16
+set guifont=SourceCodeProMedium\ 16
 set cursorline 
 " set shell=/usr/bin/bash
 set encoding=utf-8
-
+set t_Co=256 "for correct tmux 
 set mouse+=a
 set noerrorbells visualbell t_vb=
 
+set background=dark
 set ignorecase 
 set hidden 
 set shortmess+=I
