@@ -7,9 +7,9 @@ set number
 set hlsearch 
 set ruler
 highlight Comment ctermfg=green
-set guifont=SourceCodeProMedium\ 16
+set guifont=SFMonoMedium\ 16
 set cursorline 
-" set shell=/usr/bin/bash
+set shell=/usr/bin/bash
 set encoding=utf-8
 set t_Co=256 "for correct tmux 
 set mouse+=a
@@ -37,11 +37,11 @@ Plugin 'bfrg/vim-cpp-modern'
 Plugin 'Yggdroot/indentLine'
 Plugin 'rakr/vim-one'
 "Plugin 'drewtempelmeyer/palenight.vim'
-"Plugin 'rust-lang/rust.vim'
+Plugin 'rust-lang/rust.vim'
 Plugin 'kaicataldo/material.vim', {' branch': 'main'}
 Plugin 'sainnhe/sonokai'
 Plugin 'sainnhe/edge'
-" Plugin 'neovimhaskell/haskell-vim'
+Plugin 'neovimhaskell/haskell-vim'
 Plugin 'vim-syntastic/syntastic'
 "Plugin 'nvie/vim-flake8'
 Plugin 'Lokaltog/powerline', {'rtp':'powerline/bindings/vim/'}
@@ -51,7 +51,7 @@ call vundle#end()
 filetype plugin indent on 
 
 
-"let g:rustfmt_autosave = 1
+let g:rustfmt_autosave = 1
 
 let g:airline_theme='bubblegum'
 

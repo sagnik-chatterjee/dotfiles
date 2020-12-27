@@ -92,7 +92,9 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 alias python='python3'
-
+alias julia='~/installed/julia-1.5.3/bin/julia'
+alias destreamer='~/installed/destreamer/destreamer.sh'
+alias micro='~/installed/micro'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -133,6 +135,11 @@ export LESS_TERMCAP_ue=$'\e[0m'
 export LESS_TERMCAP_us=$'\e[1;4;31m'
 
 
+##codeforces things 
+alias runCpp='~/Desktop/code/runCpp.sh'
+
+
+
 #some ps1 config like geohot 
 alias ls='ls --color'
 
@@ -140,11 +147,13 @@ alias ls='ls -G'
 
 export CLICOLOR=1
 # Change to your name, do not delete backslashes
-export PS1="sagnik \[\e[31m\] \[\e[m\]\[\e[31m\]:\[\e[m\]\[\e[31m\]:\[\e[m\] \[\e[32m\]\w\[\e[m\] \[\e[34m\]»\[\e[m\] "
+export PS1="sagnik\[\e[31m\] \[\e[m\]\[\e[31m\]:\[\e[m\]\[\e[31m\]:\[\e[m\] \[\e[32m\]\w\[\e[m\] \[\e[34m\]»\[\e[m\] "
 
 export LSCOLORS=cxgxfxexbxegedabagacad
 
-
+#some tmux things 
+#alias tmux="TERM=screen-256-color-bce tmux"
+alias tmux='tmux -2'
 
 source "$HOME/.cargo/env"
 #eval "$(starship init bash)"
