@@ -104,6 +104,49 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+alias python='python3'
+alias julia='~/julia-1.5.3/bin/julia'
+alias destreamer='~/installed/destreamer/destreamer.sh'
+alias micro='~/installed/micro'
+
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+
+##add colored man pages 
+export LESS_TERMCAP_mb=$'\e[1;32m'
+export LESS_TERMCAP_md=$'\e[1;32m'
+export LESS_TERMCAP_me=$'\e[0m'
+export LESS_TERMCAP_se=$'\e[0m'
+export LESS_TERMCAP_so=$'\e[01;33m'
+export LESS_TERMCAP_ue=$'\e[0m'
+export LESS_TERMCAP_us=$'\e[1;4;31m'
+
+
+##codeforces things 
+alias runCpp='~/Desktop/code/runCpp.sh'
+
+export LSCOLORS=cxgxfxexbxegedabagacad
+
+#some tmux things 
+#alias tmux="TERM=screen-256-color-bce tmux"
+alias tmux='tmux -2'
+
+source "$HOME/.cargo/env"
+
+
+## remove green color when doing ls 
+eval "$(dircolors -p | \
+    sed 's/ 4[0-9];/ 01;/; s/;4[0-9];/;01;/g; s/;4[0-9] /;01 /' | \
+    dircolors /dev/stdin)"
+
+
+
+#gcc colors 
+export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+source /home/sagnik/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /home/sagnik/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
