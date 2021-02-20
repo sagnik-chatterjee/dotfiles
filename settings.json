@@ -1,0 +1,29 @@
+{
+  "workbench.startupEditor": "newUntitledFile",
+  "editor.fontSize": 15,
+  "files.autoSave": "afterDelay",
+  "python.showStartPage": false,
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "python.languageServer": "Microsoft",
+  "workbench.colorTheme": "1mm - Dark+",
+  "python.formatting.provider": "black",
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "window.zoomLevel": 0,
+  "explorer.confirmDelete": false,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "python.pythonPath": "/home/linuxbrew/.linuxbrew/opt/python@3.9/bin/python3.9",
+  "explorer.confirmDragAndDrop": false,
+  "[java]": {
+    "editor.defaultFormatter": "mwpb.java-prettier-formatter",
+    "editor.suggest.snippetsPreventQuickSuggestions": false
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "java.home":"/usr/lib/jvm/java-11-openjdk-amd64/"
+}
