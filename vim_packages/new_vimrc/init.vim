@@ -606,13 +606,15 @@ else
 endif
 "cp related stuff
 
+"all the files for compepetive programming from now on should have the 
+"comp in thier name 
 "load java template 
-autocmd BufNewFile *.java 0r ~/.config/nvim/templates/javaTemplate.java
+autocmd BufNewFile *comp.java 0r ~/.config/nvim/templates/javaTemplate.java
 
 "load python template 
-autocmd BufNewFile *.py 0r ~/.config/nvim/templates/pythonTemplate.py
+autocmd BufNewFile *comp.py 0r ~/.config/nvim/templates/pythonTemplate.py
 
 "load kotlin template
-autocmd BufNewFile *.kt 0r ~/.config/nvim/templates/kotlinTemplate.kt
+autocmd BufNewFile *comp.kt 0r ~/.config/nvim/templates/kotlinTemplate.kt
 
 
