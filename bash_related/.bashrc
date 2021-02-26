@@ -134,7 +134,7 @@ export LESS_TERMCAP_us=$'\e[1;4;31m'
 
 
 ##codeforces things 
-alias runCpp='~/Desktop/code/runCpp.sh'
+#alias runCpp='~/Desktop/code/runCpp.sh'
 
 
 
@@ -153,8 +153,4 @@ export LSCOLORS=cxgxfxexbxegedabagacad
 #alias tmux="TERM=screen-256-color-bce tmux"
 alias tmux='tmux -2'
 
-source "$HOME/.cargo/env"
-#eval "$(starship init bash)"
-#export STARSHIP_CONFIG=~/.config/starship
-#export STARSHIP_CACHE=~/.config/starship/cache
 
