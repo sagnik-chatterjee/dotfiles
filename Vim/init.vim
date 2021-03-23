@@ -1,4 +1,4 @@
-" vim-bootstrap 2021-02-23 12:24:21
+" vim-bootstrap 2021-03-23 13:38:38
 
 "*****************************************************************************
 "" Vim-Plug core
@@ -10,9 +10,9 @@ else
   let curl_exists=expand('curl')
 endif
 
-let g:vim_bootstrap_langs = "c,go,python"
+let g:vim_bootstrap_langs = "c,elixir,go,haskell,html,javascript,python,ruby,typescript"
 let g:vim_bootstrap_editor = "nvim"				" nvim or vim
-let g:vim_bootstrap_theme = "codedark"
+let g:vim_bootstrap_theme = "molokai"
 let g:vim_bootstrap_frams = ""
 
 if !filereadable(vimplug_exists)
@@ -49,9 +49,7 @@ Plug 'dense-analysis/ale'
 Plug 'Yggdroot/indentLine'
 Plug 'editor-bootstrap/vim-bootstrap-updater'
 Plug 'tpope/vim-rhubarb' " required by fugitive to :Gbrowse
-Plug 'tomasiser/vim-code-dark'
-Plug 'Shougo/deoplete.nvim' ,{'do':':UpdateRemotePlugins'}
-Plug 'udalov/kotlin-vim'
+Plug 'tomasr/molokai'
 
 
 if isdirectory('/usr/local/opt/fzf')
@@ -83,16 +81,53 @@ Plug 'vim-scripts/c.vim', {'for': ['c', 'cpp']}
 Plug 'ludwig/split-manpage.vim'
 
 
+" elixir
+Plug 'elixir-lang/vim-elixir'
+Plug 'carlosgaldino/elixir-snippets'
+
 
 " go
 "" Go Lang Bundle
 Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'}
 
 
+" haskell
+"" Haskell Bundle
+Plug 'eagletmt/neco-ghc'
+Plug 'dag/vim2hs'
+Plug 'pbrisbin/vim-syntax-shakespeare'
+
+
+" html
+"" HTML Bundle
+Plug 'hail2u/vim-css3-syntax'
+Plug 'gko/vim-coloresque'
+Plug 'tpope/vim-haml'
+Plug 'mattn/emmet-vim'
+
+
+" javascript
+"" Javascript Bundle
+Plug 'jelera/vim-javascript-syntax'
+
+
 " python
 "" Python Bundle
 Plug 'davidhalter/jedi-vim'
 Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
+
+
+" ruby
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-rake'
+Plug 'tpope/vim-projectionist'
+Plug 'thoughtbot/vim-rspec'
+Plug 'ecomba/vim-ruby-refactoring', {'tag': 'main'}
+
+
+" typescript
+Plug 'leafgarland/typescript-vim'
+Plug 'HerringtonDarkholme/yats.vim'
 
 
 "*****************************************************************************
@@ -161,13 +196,13 @@ set ruler
 set number
 
 let no_buffers_menu=1
-colorscheme codedark
+colorscheme molokai
 
 
 set mousemodel=popup
 set t_Co=256
 set guioptions=egmrti
-set gfn=Monospace\ 15
+set gfn=Monospace\ 10
 
 if has("gui_running")
   if has("gui_mac") || has("gui_macvim")
@@ -224,14 +259,6 @@ let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tagbar#enabled = 1
 let g:airline_skip_empty_sections = 1
-
-"deoplate on --> hahahah!!!!
-let g:deoplete#enable_at_startup=1
-
-
-
-
-
 
 "*****************************************************************************
 "" Abbreviations
@@ -451,6 +478,9 @@ autocmd FileType c setlocal tabstop=4 shiftwidth=4 expandtab
 autocmd FileType cpp setlocal tabstop=4 shiftwidth=4 expandtab
 
 
+" elixir
+
+
 " go
 " vim-go
 " run :GoBuild or :GoTestCompile based on the go file
@@ -479,7 +509,6 @@ let g:go_highlight_space_tab_error = 0
 let g:go_highlight_array_whitespace_error = 0
 let g:go_highlight_trailing_whitespace_error = 0
 let g:go_highlight_extra_types = 1
-
 
 autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4 softtabstop=4
 
@@ -520,6 +549,28 @@ augroup END
     \"go": ['golint', 'go vet'], })
 
 
+" haskell
+let g:haskell_conceal_wide = 1
+let g:haskell_multiline_strings = 1
+let g:necoghc_enable_detailed_browse = 1
+autocmd Filetype haskell setlocal omnifunc=necoghc#omnifunc
+
+
+" html
+" for html files, 2 spaces
+autocmd Filetype html setlocal ts=2 sw=2 expandtab
+
+
+" javascript
+let g:javascript_enable_domhtmlcss = 1
+
+" vim-javascript
+augroup vimrc-javascript
+  autocmd!
+  autocmd FileType javascript setl tabstop=4|setl shiftwidth=4|setl expandtab softtabstop=4
+augroup END
+
+
 " python
 " vim-python
 augroup vimrc-python
@@ -550,11 +601,57 @@ let g:airline#extensions#virtualenv#enabled = 1
 " Syntax highlight
 let python_highlight_all = 1
 
-"java 
-autocmd FileType java setlocal omnifunc=javacomplete#Complete
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#auto_completion_start_length = 2
-let g:deoplete#omni_patterns = {}
+
+" ruby
+let g:rubycomplete_buffer_loading = 1
+let g:rubycomplete_classes_in_global = 1
+let g:rubycomplete_rails = 1
+
+augroup vimrc-ruby
+  autocmd!
+  autocmd BufNewFile,BufRead *.rb,*.rbw,*.gemspec setlocal filetype=ruby
+  autocmd FileType ruby set tabstop=2|set shiftwidth=2|set expandtab softtabstop=2
+augroup END
+
+let g:tagbar_type_ruby = {
+    \ 'kinds' : [
+        \ 'm:modules',
+        \ 'c:classes',
+        \ 'd:describes',
+        \ 'C:contexts',
+        \ 'f:methods',
+        \ 'F:singleton methods'
+    \ ]
+\ }
+
+" RSpec.vim mappings
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>a :call RunAllSpecs()<CR>
+
+" For ruby refactory
+if has('nvim')
+  runtime! macros/matchit.vim
+else
+  packadd! matchit
+endif
+
+" Ruby refactory
+nnoremap <leader>rap  :RAddParameter<cr>
+nnoremap <leader>rcpc :RConvertPostConditional<cr>
+nnoremap <leader>rel  :RExtractLet<cr>
+vnoremap <leader>rec  :RExtractConstant<cr>
+vnoremap <leader>relv :RExtractLocalVariable<cr>
+nnoremap <leader>rit  :RInlineTemp<cr>
+vnoremap <leader>rrlv :RRenameLocalVariable<cr>
+vnoremap <leader>rriv :RRenameInstanceVariable<cr>
+vnoremap <leader>rem  :RExtractMethod<cr>
+
+
+" typescript
+let g:yats_host_keyword = 1
+
 
 
 "*****************************************************************************
@@ -604,17 +701,3 @@ else
   let g:airline_symbols.readonly = ''
   let g:airline_symbols.linenr = ''
 endif
-"cp related stuff
-
-"all the files for compepetive programming from now on should have the 
-"comp in thier name 
-"load java template 
-autocmd BufNewFile *comp.java 0r ~/.config/nvim/templates/javaTemplate.java
-
-"load python template 
-autocmd BufNewFile *comp.py 0r ~/.config/nvim/templates/pythonTemplate.py
-
-"load kotlin template
-autocmd BufNewFile *comp.kt 0r ~/.config/nvim/templates/kotlinTemplate.kt
-
-
