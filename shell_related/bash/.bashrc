@@ -57,9 +57,9 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ \n'
 else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ \n'
 fi
 unset color_prompt force_color_prompt
 
@@ -85,18 +85,20 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # colored GCC warnings and errors
-export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+#export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
-alias python='python3'
-alias pip='pip3'
 
+alias python='python3'
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+
+#cp related 
+alias runJava='~/Desktop/CP/tools/runJava.sh'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -118,39 +120,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-## remove green color when doing ls 
-eval "$(dircolors -p | \
-    sed 's/ 4[0-9];/ 01;/; s/;4[0-9];/;01;/g; s/;4[0-9] /;01 /' | \
-    dircolors /dev/stdin)"
-
-##add colored man pages 
-export LESS_TERMCAP_mb=$'\e[1;32m'
-export LESS_TERMCAP_md=$'\e[1;32m'
-export LESS_TERMCAP_me=$'\e[0m'
-export LESS_TERMCAP_se=$'\e[0m'
-export LESS_TERMCAP_so=$'\e[01;33m'
-export LESS_TERMCAP_ue=$'\e[0m'
-export LESS_TERMCAP_us=$'\e[1;4;31m'
-
-
-##codeforces things 
-#alias runCpp='~/Desktop/code/runCpp.sh'
-
-
-
-#some ps1 config like geohot 
-alias ls='ls --color'
-
-alias ls='ls -G'
-
-export CLICOLOR=1
-# Change to your name, do not delete backslashes
-export PS1="sagnik\[\e[31m\] \[\e[m\]\[\e[31m\]:\[\e[m\]\[\e[31m\]:\[\e[m\] \[\e[32m\]\w\[\e[m\] \[\e[34m\]»\[\e[m\] "
-
-export LSCOLORS=cxgxfxexbxegedabagacad
-
-#some tmux things 
-#alias tmux="TERM=screen-256-color-bce tmux"
-alias tmux='tmux -2'
-
-
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/sagnik/.sdkman"
+[[ -s "/home/sagnik/.sdkman/bin/sdkman-init.sh" ]] && source "/home/sagnik/.sdkman/bin/sdkman-init.sh"
