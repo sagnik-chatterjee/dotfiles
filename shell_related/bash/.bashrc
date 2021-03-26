@@ -47,19 +47,19 @@ esac
 
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-	# We have color support; assume it's compliant with Ecma-48
-	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-	# a case would tend to support setf rather than setaf.)
-	color_prompt=yes
+    # We have color support; assume it's compliant with Ecma-48
+    # (ISO/IEC-6429). (Lack of such support is extremely rare, and such
+    # a case would tend to support setf rather than setaf.)
+    color_prompt=yes
     else
-	color_prompt=
+    color_prompt=
     fi
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ \n'
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$\n '
 else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ \n'
+    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$\n '
 fi
 unset color_prompt force_color_prompt
 
@@ -85,20 +85,21 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # colored GCC warnings and errors
-#export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+alias python=python3.8
+alias pip='pip3'
+alias go='/usr/local/go/bin/go'
+alias youtube-dl='~/Download/youtube-dl/youtube-dl'
+alias runJava='~/tools/runJava.sh'
 
-alias python='python3'
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-
-#cp related 
-alias runJava='~/Desktop/CP/tools/runJava.sh'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -120,6 +121,54 @@ if ! shopt -oq posix; then
   fi
 fi
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/home/sagnik/.sdkman"
-[[ -s "/home/sagnik/.sdkman/bin/sdkman-init.sh" ]] && source "/home/sagnik/.sdkman/bin/sdkman-init.sh"
+## remove green color when doing ls 
+eval "$(dircolors -p | \
+    sed 's/ 4[0-9];/ 01;/; s/;4[0-9];/;01;/g; s/;4[0-9] /;01 /' | \
+    dircolors /dev/stdin)"
+
+##add colored man pages 
+export LESS_TERMCAP_mb=$'\e[1;32m'
+export LESS_TERMCAP_md=$'\e[1;32m'
+export LESS_TERMCAP_me=$'\e[0m'
+export LESS_TERMCAP_se=$'\e[0m'
+export LESS_TERMCAP_so=$'\e[01;33m'
+export LESS_TERMCAP_ue=$'\e[0m'
+export LESS_TERMCAP_us=$'\e[1;4;31m'
+
+## colors for directories 
+export LS_OPTIONS='--color=auto'
+eval "$(dircolors -b)"
+alias ls='ls $LS_OPTIONS'
+
+#some ps1 config like geohot 
+#alias ls='ls --color'
+
+#alias ls='ls -G'
+
+#export CLICOLOR=1
+# Change to your name, do not delete backslashes
+export PS1="lc\[\e[31m\] \[\e[m\]\[\e[31m\]:\[\e[m\]\[\e[31m\]:\[\e[m\] \[\e[32m\]\w\[\e[m\] \[\e[34m\]»\[\e[m\] \n"
+
+export LSCOLORS=cxgxfxexbxegedabagacad
+
+#some tmux things 
+#alias tmux="TERM=screen-256-color-bce tmux"
+alias tmux='tmux -2'
+
+eval "$(dircolors -p | \
+    sed 's/ 4[0-9];/ 01;/; s/;4[0-9];/;01;/g; s/;4[0-9] /;01 /' | \
+    dircolors /dev/stdin)"
+
+
+#cp stuff --java 
+#1.see runJava.sh in cp_tools 
+
+##some webdev stuff 
+alias chrome='google-chrome'
+export PATH=$PATH:~/cp_tools
+
+## emacs stuff
+alias em =emacs
+alias emcl = emacs -nw
+
+
