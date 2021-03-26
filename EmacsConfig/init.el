@@ -47,4 +47,40 @@
 		    :weight 'normal
 		    :width 'normal)
 
+;;set line number 
+;(setq line-number-mode t)
 
+(global-display-line-numbers-mode 1)
+
+
+;;copy-paste between system and emacs 
+
+(setq x-select-enable-clipboard t)
+(setq interprogram-paste-function 'x-cut-buffer-or-selection-value)
+
+;; bracket-autocomplete 
+
+;(setq electric-pair-preserve-balance nil)
+;(require 'autopair)
+;(autopair-global-mode) ;; enable autopair in all buffers
+(electric-pair-mode 1)
+;for colored baalanced parenthesis
+(show-paren-mode 1)
+
+;;python-package
+
+(use-package elpy
+  :ensure t
+  :init
+  (elpy-enable))
+
+;;autopep8
+;(use-package py-autopep8)
+
+;; Enable autopep8
+
+;(require 'py-autopep8)
+;(add-hook 'elpy-mode-hook 'py-autopep8-enable-on-save)
+
+;;magit for git support
+;(require 'magit)
