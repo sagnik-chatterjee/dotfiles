@@ -26,9 +26,10 @@ pip3 install notebook
 
 ## other misc python3 packages that need to be installed with pip3
 
+# install Latex
+sudo apt-get install -y texlive-full
 
-
-#intall java11
+#install java11
 sudo apt-get install -y openjdk-11-jdk
 
 
