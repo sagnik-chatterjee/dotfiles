@@ -77,6 +77,14 @@ Plug 'tpope/vim-fugitive'
 
 "nerdtree
 Plug 'scrooloose/nerdtree'
+
+
+"tex addon for vim 
+Plug 'lervag/vimtex'
+
+"ELixir setup
+Plug 'elixir-editors/vim-elixir'
+
 call plug#end()
 
 "bracketpair
