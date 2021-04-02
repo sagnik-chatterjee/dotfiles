@@ -33,7 +33,7 @@ sudo apt-get install -y texlive-full
 sudo apt-get install -y openjdk-11-jdk
 
 
-#install emacs and configure
+#install neovim and configure 
 #todo
 
 
