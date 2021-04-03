@@ -71,6 +71,10 @@ Plug 'pangloss/vim-javascript'
 "autopair
 Plug 'jiangmiao/auto-pairs'
 
+"golang plugin add 
+Plug 'fatih/vim-go' 
+
+
 "git integration 
 Plug 'tpope/vim-fugitive'
 
@@ -112,7 +116,7 @@ au BufNewFile,BufRead *.py
     \ set expandtab
     \ set autoindent
     \ set fileformat=unix
-au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+au BufRead,BufNewFile *.py,*.pyw match BadWhitespace /\s\+$/
 let g:python_highlight_all = 1
 
 
