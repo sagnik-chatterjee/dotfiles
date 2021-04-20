@@ -1,29 +1,56 @@
 {
-  "workbench.startupEditor": "newUntitledFile",
-  "editor.fontSize": 15,
-  "files.autoSave": "afterDelay",
-  "python.showStartPage": false,
-  "editor.suggestSelection": "first",
-  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-  "python.languageServer": "Microsoft",
-  "workbench.colorTheme": "1mm - Dark+",
-  "python.formatting.provider": "black",
-  "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "window.zoomLevel": 0,
-  "explorer.confirmDelete": false,
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "python.pythonPath": "/home/linuxbrew/.linuxbrew/opt/python@3.9/bin/python3.9",
-  "explorer.confirmDragAndDrop": false,
-  "[java]": {
-    "editor.defaultFormatter": "mwpb.java-prettier-formatter",
-    "editor.suggest.snippetsPreventQuickSuggestions": false
-  },
-  "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "java.home":"/usr/lib/jvm/java-11-openjdk-amd64/"
+    "workbench.startupEditor": "newUntitledFile",
+    "editor.fontSize": 16,
+    "editor.formatOnSave": false,
+    "editor.fontFamily": "Hack",
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "workbench.iconTheme": "material-icon-theme",
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "files.associations": {
+        "*.html": "html"
+    },
+    "explorer.confirmDelete": false,
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+    },
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "emmet.includeLanguages": {
+        "javascript": "javascriptreact",
+        "java":"java"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "liveServer.settings.donotShowInfoMsg": true,
+    "docker.showStartPage": false,
+    "workbench.editorAssociations": [
+        {
+            "viewType": "jupyter.notebook.ipynb",
+            "filenamePattern": "*.ipynb"
+        }
+    ],
+    "python.showStartPage": false,
+    "workbench.colorTheme": "Sorcerer",
+    "workbench.sideBar.location": "right",
+    "terminal.integrated.shell.linux": "zsh",
+    {
+        "carbon.backgroundColor": "rgba(0,0,0,0)",
+        "carbon.theme": "seti",
+        "carbon.dropShadow": true,
+        "carbon.windowControls": true,
+        "carbon.autoAdjustWidth": true,
+        "carbon.paddingVertical": 24,
+        "carbon.paddingHorizontal": 16,
+        "carbon.lineNumbers": false,
+        "carbon.fontFamily": "Hack",
+        "carbon.fontSize": 13
+    }
 }
