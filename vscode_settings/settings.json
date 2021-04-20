@@ -38,9 +38,9 @@
         }
     ],
     "python.showStartPage": false,
-    "workbench.colorTheme": "Sorcerer",
+    "workbench.colorTheme": "One Dark Darker",
     "workbench.sideBar.location": "right",
-    "terminal.integrated.shell.linux": "zsh",
+    "terminal.integrated.shell.linux": "zsh",//better looking with robbyrussell default scheme 
     {
         "carbon.backgroundColor": "rgba(0,0,0,0)",
         "carbon.theme": "seti",
@@ -50,7 +50,7 @@
         "carbon.paddingVertical": 24,
         "carbon.paddingHorizontal": 16,
         "carbon.lineNumbers": false,
-        "carbon.fontFamily": "Hack",
+        "carbon.fontFamily": "Hack",//install hack from powerline fonts 
         "carbon.fontSize": 13
     }
 }
