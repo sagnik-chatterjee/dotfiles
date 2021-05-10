@@ -4,11 +4,11 @@
     "editor.formatOnSave": false,
     "editor.fontFamily": "Hack",
     "[javascript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+        "editor.defaultFormatter": "vscode.typescript-language-features"
     },
     "workbench.iconTheme": "material-icon-theme",
     "[html]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+        "editor.defaultFormatter": "vscode.html-language-features"
     },
     "files.associations": {
         "*.html": "html"
@@ -24,7 +24,7 @@
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "emmet.includeLanguages": {
         "javascript": "javascriptreact",
-        "java":"java"
+        "java": "java"
     },
     "[json]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -40,17 +40,31 @@
     "python.showStartPage": false,
     "workbench.colorTheme": "One Dark Darker",
     "workbench.sideBar.location": "right",
-    "terminal.integrated.shell.linux": "zsh",//better looking with robbyrussell default scheme 
-    {
-        "carbon.backgroundColor": "rgba(0,0,0,0)",
-        "carbon.theme": "seti",
-        "carbon.dropShadow": true,
-        "carbon.windowControls": true,
-        "carbon.autoAdjustWidth": true,
-        "carbon.paddingVertical": 24,
-        "carbon.paddingHorizontal": 16,
-        "carbon.lineNumbers": false,
-        "carbon.fontFamily": "Hack",//install hack from powerline fonts 
-        "carbon.fontSize": 13
-    }
+    "terminal.integrated.shell": "zsh",
+    //"terminal.integrated.shell.windows": "C:\\Windows\\System32\\wsl.exe",
+    /*"terminal.integrated.shellArgs.windows": [
+        "-d",
+        "Ubuntu-20.04"
+    ],*/
+    "files.autoSave": "afterDelay",
+    "[shellscript]": {
+        "editor.defaultFormatter": "shakram02.bash-beautify"
+    },
+    "emojisense.unicodeCompletionsEnabled": true,
+    "emojisense.markupCompletionsEnabled":false,
+    "emojisense.languages": {
+        "markdown": true,
+        "plaintext": {
+            "markupCompletionsEnabled": false,
+            "emojiDecoratorsEnabled": false
+        },
+        "git-commit":true,
+        "python":false,
+        "json":true,
+        "java":true,
+        "markdown":true,
+        
+    },
+    "python.pythonPath": "C:\\Python39\\python.exe",
+    
 }
