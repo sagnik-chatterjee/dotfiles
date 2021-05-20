@@ -1,0 +1,64 @@
+{
+    "workbench.startupEditor": "newUntitledFile",
+    "editor.fontSize": 16,
+    "editor.formatOnSave": false,
+    "editor.fontFamily": "SF Mono",
+    "[javascript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "workbench.iconTheme": "material-icon-theme",
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "files.associations": {
+        "*.html": "html"
+    },
+    "explorer.confirmDelete": false,
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+    },
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "emmet.includeLanguages": {
+        "javascript": "javascriptreact",
+        "java": "java"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "liveServer.settings.donotShowInfoMsg": true,
+    "docker.showStartPage": false,
+    "workbench.editorAssociations": [
+        {
+            "viewType": "jupyter.notebook.ipynb",
+            "filenamePattern": "*.ipynb"
+        }
+    ],
+    "python.showStartPage": false,
+    "workbench.sideBar.location": "right",
+    //"terminal.integrated.shell": "zsh",
+    "terminal.integrated.shell.windows": "C:\\Windows\\System32\\wsl.exe",
+    "terminal.integrated.shellArgs.windows": [
+        "-d",
+        "Ubuntu-18.04"
+    ],
+    "terminal.integrated.fontFamily": "SF Mono",
+    "terminal.integrated.fontSize":14,
+    "files.autoSave": "afterDelay",
+    "[shellscript]": {
+        "editor.defaultFormatter": "shakram02.bash-beautify"
+    },
+    "python.pythonPath": "/usr/bin/python3.8",
+    "python.formatting.provider": "black",
+    //"java": "javac $fileName; java $fileNameWithoutExt",
+    //"code-runner.runInTerminal": true,
+    "[java]": {
+        "editor.defaultFormatter": "ilkka.google-java-format",
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+}
