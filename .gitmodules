@@ -1,3 +1,6 @@
 [submodule "st"]
 	path = st
 	url = https://github.com/LukeSmithxyz/st.git
+[submodule "SF-Mono-Font"]
+	path = SF-Mono-Font
+	url = https://github.com/supercomputra/SF-Mono-Font.git
