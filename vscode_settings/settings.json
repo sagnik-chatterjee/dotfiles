@@ -1,27 +1,9 @@
 {
     "workbench.startupEditor": "newUntitledFile",
+    "editor.fontFamily": "SF Mono",
     "editor.fontSize": 16,
+    "workbench.startupEditor": "newUntitledFile",
     "editor.formatOnSave": false,
-    "editor.fontFamily": "Hack",
-    "[javascript]": {
-        "editor.defaultFormatter": "vscode.typescript-language-features"
-    },
-    "workbench.iconTheme": "material-icon-theme",
-    "[html]": {
-        "editor.defaultFormatter": "vscode.html-language-features"
-    },
-    "files.associations": {
-        "*.html": "html"
-    },
-    "explorer.confirmDelete": false,
-    "files.exclude": {
-        "**/.classpath": true,
-        "**/.project": true,
-        "**/.settings": true,
-        "**/.factorypath": true
-    },
-    "editor.suggestSelection": "first",
-    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "emmet.includeLanguages": {
         "javascript": "javascriptreact",
         "java": "java"
@@ -29,42 +11,27 @@
     "[json]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
-    "liveServer.settings.donotShowInfoMsg": true,
-    "docker.showStartPage": false,
+    "python.showStartPage": false,
+    "workbench.sideBar.location": "right",
+    "terminal.integrated.shell": "bash",
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "terminal.integrated.fontFamily": "SF Mono",
+    "terminal.integrated.fontSize":14,
+    "files.autoSave": "afterDelay",
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+    },
+    "[java]": {
+        "editor.defaultFormatter": "redhat.java"
+    },
     "workbench.editorAssociations": [
         {
             "viewType": "jupyter.notebook.ipynb",
             "filenamePattern": "*.ipynb"
         }
     ],
-    "python.showStartPage": false,
-    "workbench.colorTheme": "One Dark Darker",
-    "workbench.sideBar.location": "right",
-    "terminal.integrated.shell": "zsh",
-    //"terminal.integrated.shell.windows": "C:\\Windows\\System32\\wsl.exe",
-    /*"terminal.integrated.shellArgs.windows": [
-        "-d",
-        "Ubuntu-20.04"
-    ],*/
-    "files.autoSave": "afterDelay",
-    "[shellscript]": {
-        "editor.defaultFormatter": "shakram02.bash-beautify"
-    },
-    "emojisense.unicodeCompletionsEnabled": true,
-    "emojisense.markupCompletionsEnabled":false,
-    "emojisense.languages": {
-        "markdown": true,
-        "plaintext": {
-            "markupCompletionsEnabled": false,
-            "emojiDecoratorsEnabled": false
-        },
-        "git-commit":true,
-        "python":false,
-        "json":true,
-        "java":true,
-        "markdown":true,
-        
-    },
-    "python.pythonPath": "C:\\Python39\\python.exe",
-    
 }
