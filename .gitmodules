@@ -4,3 +4,6 @@
 [submodule "SF-Mono-Font"]
 	path = SF-Mono-Font
 	url = https://github.com/supercomputra/SF-Mono-Font.git
+[submodule "BigSur-icon-theme"]
+	path = BigSur-icon-theme
+	url = https://github.com/yeyushengfan258/BigSur-icon-theme.git
