@@ -52,6 +52,9 @@ Plug 'tpope/vim-rhubarb' " required by fugitive to :Gbrowse
 Plug 'tomasiser/vim-code-dark'
 Plug 'tyrannicaltoucan/vim-quantum'
 Plug 'ghifarit53/tokyonight-vim'
+Plug 'uiiaoo/java-syntax.vim'
+Plug 'numirias/semshi' , {'do':':UpdateRemotePlugins'}
+Plug 'ervandew/supertab'
 
 if isdirectory('/usr/local/opt/fzf')
   Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
@@ -87,9 +90,6 @@ Plug 'ludwig/split-manpage.vim'
 Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'}
 
 
-" ocaml
-"" OCaml Bundle
-Plug 'def-lkb/ocp-indent-vim'
 
 
 " python
@@ -98,13 +98,9 @@ Plug 'davidhalter/jedi-vim'
 Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
 
 
-" ruby
-Plug 'tpope/vim-rails'
-Plug 'tpope/vim-rake'
-Plug 'tpope/vim-projectionist'
-Plug 'thoughtbot/vim-rspec'
-Plug 'ecomba/vim-ruby-refactoring', {'tag': 'main'}
 
+"java 
+"uses uiiaoo for syntax hihglighting 
 
 "*****************************************************************************
 "*****************************************************************************
