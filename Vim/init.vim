@@ -1,4 +1,4 @@
-" vim-bootstrap 2021-05-22 18:01:31
+" vim-bootstrap 2021-06-06 13:16:05
 
 "*****************************************************************************
 "" Vim-Plug core
@@ -10,7 +10,7 @@ else
   let curl_exists=expand('curl')
 endif
 
-let g:vim_bootstrap_langs = "c,go,ocaml,python,ruby"
+let g:vim_bootstrap_langs = "c,go,python,scala"
 let g:vim_bootstrap_editor = "nvim"				" nvim or vim
 let g:vim_bootstrap_theme = "codedark"
 let g:vim_bootstrap_frams = ""
@@ -50,11 +50,7 @@ Plug 'Yggdroot/indentLine'
 Plug 'editor-bootstrap/vim-bootstrap-updater'
 Plug 'tpope/vim-rhubarb' " required by fugitive to :Gbrowse
 Plug 'tomasiser/vim-code-dark'
-Plug 'tyrannicaltoucan/vim-quantum'
-Plug 'ghifarit53/tokyonight-vim'
-Plug 'uiiaoo/java-syntax.vim'
-Plug 'numirias/semshi' , {'do':':UpdateRemotePlugins'}
-Plug 'ervandew/supertab'
+Plug 'vimwiki/vimwiki'
 
 if isdirectory('/usr/local/opt/fzf')
   Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
@@ -90,17 +86,20 @@ Plug 'ludwig/split-manpage.vim'
 Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'}
 
 
-
-
 " python
 "" Python Bundle
 Plug 'davidhalter/jedi-vim'
 Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
 
 
+" scala
+if has('python')
+    " sbt-vim
+    Plug 'ktvoelker/sbt-vim'
+endif
+" vim-scala
+Plug 'derekwyatt/vim-scala'
 
-"java 
-"uses uiiaoo for syntax hihglighting 
 
 "*****************************************************************************
 "*****************************************************************************
@@ -168,18 +167,13 @@ set ruler
 set number
 
 let no_buffers_menu=1
-"set background=dark
-let g:tokyonight_style ='storm'
-let g:tokyonight_enable_italic =1 
-colorscheme tokyonight
+colorscheme codedark
 
-"let g:quantum_black=1
-"let g:quantum_italics=1
 
 set mousemodel=popup
 set t_Co=256
 set guioptions=egmrti
-set gfn=SFMono\ 14
+set gfn=Monospace\ 10
 
 if has("gui_running")
   if has("gui_mac") || has("gui_macvim")
@@ -523,16 +517,6 @@ augroup END
     \"go": ['golint', 'go vet'], })
 
 
-" ocaml
-" Add Merlin to rtp
-let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
-execute "set rtp+=" . g:opamshare . "/merlin/vim"
-
-" ale
-:call extend(g:ale_linters, {
-    \'ocaml': ['merlin'], })
-
-
 " python
 " vim-python
 augroup vimrc-python
@@ -564,51 +548,7 @@ let g:airline#extensions#virtualenv#enabled = 1
 let python_highlight_all = 1
 
 
-" ruby
-let g:rubycomplete_buffer_loading = 1
-let g:rubycomplete_classes_in_global = 1
-let g:rubycomplete_rails = 1
-
-augroup vimrc-ruby
-  autocmd!
-  autocmd BufNewFile,BufRead *.rb,*.rbw,*.gemspec setlocal filetype=ruby
-  autocmd FileType ruby set tabstop=2|set shiftwidth=2|set expandtab softtabstop=2
-augroup END
-
-let g:tagbar_type_ruby = {
-    \ 'kinds' : [
-        \ 'm:modules',
-        \ 'c:classes',
-        \ 'd:describes',
-        \ 'C:contexts',
-        \ 'f:methods',
-        \ 'F:singleton methods'
-    \ ]
-\ }
-
-" RSpec.vim mappings
-map <Leader>t :call RunCurrentSpecFile()<CR>
-map <Leader>s :call RunNearestSpec()<CR>
-map <Leader>l :call RunLastSpec()<CR>
-map <Leader>a :call RunAllSpecs()<CR>
-
-" For ruby refactory
-if has('nvim')
-  runtime! macros/matchit.vim
-else
-  packadd! matchit
-endif
-
-" Ruby refactory
-nnoremap <leader>rap  :RAddParameter<cr>
-nnoremap <leader>rcpc :RConvertPostConditional<cr>
-nnoremap <leader>rel  :RExtractLet<cr>
-vnoremap <leader>rec  :RExtractConstant<cr>
-vnoremap <leader>relv :RExtractLocalVariable<cr>
-nnoremap <leader>rit  :RInlineTemp<cr>
-vnoremap <leader>rrlv :RRenameLocalVariable<cr>
-vnoremap <leader>rriv :RRenameInstanceVariable<cr>
-vnoremap <leader>rem  :RExtractMethod<cr>
+" scala
 
 
 
