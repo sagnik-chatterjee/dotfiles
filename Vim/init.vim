@@ -1,18 +1,12 @@
-" vim-bootstrap 2021-06-06 13:16:05
-
-"*****************************************************************************
-"" Vim-Plug core
+" *************************************************************************
+"" Sagnik's Vim configs
 "*****************************************************************************
 let vimplug_exists=expand('~/.config/nvim/autoload/plug.vim')
-if has('win32')&&!has('win64')
-  let curl_exists=expand('C:\Windows\Sysnative\curl.exe')
-else
-  let curl_exists=expand('curl')
-endif
+let curl_exists=expand('curl')
 
-let g:vim_bootstrap_langs = "c,go,python,scala"
+let g:vim_bootstrap_langs = "c,go,python,c++,rust"
 let g:vim_bootstrap_editor = "nvim"				" nvim or vim
-let g:vim_bootstrap_theme = "codedark"
+let g:vim_bootstrap_theme = ""
 let g:vim_bootstrap_frams = ""
 
 if !filereadable(vimplug_exists)
@@ -49,8 +43,20 @@ Plug 'dense-analysis/ale'
 Plug 'Yggdroot/indentLine'
 Plug 'editor-bootstrap/vim-bootstrap-updater'
 Plug 'tpope/vim-rhubarb' " required by fugitive to :Gbrowse
-Plug 'tomasiser/vim-code-dark'
 Plug 'vimwiki/vimwiki'
+
+Plug 'octol/vim-cpp-enhanced-highlight' "enhanced highlighting for cpp
+"color theme
+Plug 'liuchengxu/space-vim-dark'
+Plug 'sonph/onehalf', {'rtp':'vim'}
+
+"c++ stuff
+Plug 'vim-jp/vim-cpp'
+" Ranger support inside vim 
+Plug 'rbgrouleff/bclose.vim'
+
+Plug 'rust-lang/rust.vim'
+
 
 if isdirectory('/usr/local/opt/fzf')
   Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
@@ -91,14 +97,14 @@ Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'}
 Plug 'davidhalter/jedi-vim'
 Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
 
-
-" scala
-if has('python')
-    " sbt-vim
-    Plug 'ktvoelker/sbt-vim'
-endif
-" vim-scala
-Plug 'derekwyatt/vim-scala'
+"c++ 
+let g:cpp_class_scope_highlight = 1
+let g:cpp_member_varibale_highlight = 1
+let g:cpp_posix_standard = 1
+let g:cpp_experimental_simple_template_highlight = 1
+let g:cpp_experimental_template_highlight = 1
+"let g:cpp_concepts_highlights = 1
+"let g:cpp_no_function_highlight = 1
 
 
 "*****************************************************************************
@@ -123,6 +129,8 @@ set encoding=utf-8
 set fileencoding=utf-8
 set fileencodings=utf-8
 
+"vimwiki setup
+let g:vimwiki_list =[{'path':'~/vimwiki/','syntax':'markdown','ext':'.md'}]
 
 "" Fix backspace indent
 set backspace=indent,eol,start
@@ -167,30 +175,15 @@ set ruler
 set number
 
 let no_buffers_menu=1
-colorscheme codedark
+let g:space_vim_dark_background= 234
+colorscheme onehalfdark
 
+hi Comment cterm=italic
 
 set mousemodel=popup
-set t_Co=256
+"set t_Co=256
 set guioptions=egmrti
-set gfn=Monospace\ 10
-
-if has("gui_running")
-  if has("gui_mac") || has("gui_macvim")
-    set guifont=Menlo:h12
-    set transparency=7
-  endif
-else
-  let g:CSApprox_loaded = 1
-
-  " IndentLine
-  let g:indentLine_enabled = 1
-  let g:indentLine_concealcursor = 0
-  let g:indentLine_char = '┆'
-  let g:indentLine_faster = 1
-
-  
-endif
+set guifont=SFMono\ 14
 
 
 
@@ -201,7 +194,6 @@ au TermEnter * setlocal scrolloff=0
 au TermLeave * setlocal scrolloff=3
 
 
-"" Status bar
 set laststatus=2
 
 "" Use modeline overrides
@@ -230,7 +222,7 @@ let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tagbar#enabled = 1
 let g:airline_skip_empty_sections = 1
-
+let g:airline_statusline_ontop = 1 
 "*****************************************************************************
 "" Abbreviations
 "*****************************************************************************
@@ -437,6 +429,28 @@ vmap > >gv
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
+"list of commands for Ranger 
+"Ranger 
+"// open current file by default
+"RangerCurrentFile // Default Ranger behaviour
+"RangerCurrentDirectory
+"RangerWorkingDirectory
+
+""// open always in new tabs
+"RangerNewTab
+"RangerCurrentFileNewTab
+"RangerCurrentDirectoryNewTab
+"RangerWorkingDirectoryNewTab
+
+""// open tab, when existant or in new tab when not existant
+"RangerCurrentFileExistingOrNewTab
+"RangerCurrentDirectoryExistingOrNewTab
+"RangerWorkingDirectoryExistingOrNewTab
+
+
+
+
+
 "" Open current line on GitHub
 nnoremap <Leader>o :.Gbrowse<CR>
 
@@ -548,7 +562,9 @@ let g:airline#extensions#virtualenv#enabled = 1
 let python_highlight_all = 1
 
 
-" scala
+" rust 
+let g:rustfmt_autosave = 1
+let g:rust_clip_command='xclip -selection clipboard'
 
 
 
