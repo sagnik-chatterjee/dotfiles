@@ -49,9 +49,11 @@ Plug 'octol/vim-cpp-enhanced-highlight' "enhanced highlighting for cpp
 "color theme
 Plug 'liuchengxu/space-vim-dark'
 Plug 'sonph/onehalf', {'rtp':'vim'}
-
+Plug 'crusoexia/vim-monokai'
+Plug 'morhetz/gruvbox'
 "c++ stuff
 Plug 'vim-jp/vim-cpp'
+Plug 'bfrg/vim-cpp-modern'
 " Ranger support inside vim 
 Plug 'rbgrouleff/bclose.vim'
 
@@ -97,14 +99,6 @@ Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'}
 Plug 'davidhalter/jedi-vim'
 Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
 
-"c++ 
-let g:cpp_class_scope_highlight = 1
-let g:cpp_member_varibale_highlight = 1
-let g:cpp_posix_standard = 1
-let g:cpp_experimental_simple_template_highlight = 1
-let g:cpp_experimental_template_highlight = 1
-"let g:cpp_concepts_highlights = 1
-"let g:cpp_no_function_highlight = 1
 
 
 "*****************************************************************************
@@ -175,8 +169,10 @@ set ruler
 set number
 
 let no_buffers_menu=1
-let g:space_vim_dark_background= 234
-colorscheme onehalfdark
+"let g:space_vim_dark_background= 234
+let g:monokia_term_italic=1
+set termguicolors
+colorscheme gruvbox
 
 hi Comment cterm=italic
 
@@ -222,7 +218,6 @@ let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tagbar#enabled = 1
 let g:airline_skip_empty_sections = 1
-let g:airline_statusline_ontop = 1 
 "*****************************************************************************
 "" Abbreviations
 "*****************************************************************************
@@ -374,6 +369,21 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<c-b>"
 let g:UltiSnipsEditSplit="vertical"
+
+"c++ configs 
+" Disable function highlighting (affects both C and C++ files)
+let g:cpp_no_function_highlight = 1
+
+" Enable highlighting of C++11 attributes
+let g:cpp_attributes_highlight = 1
+
+" Highlight struct/class member variables (affects both C and C++ files)
+let g:cpp_member_highlight = 1
+
+" Put all standard C and C++ keywords under Vim's highlight group 'Statement'
+" (affects both C and C++ files)
+let g:cpp_simple_highlight = 1
+
 
 " ale
 let g:ale_linters = {}

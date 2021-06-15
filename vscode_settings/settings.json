@@ -6,14 +6,13 @@
     "editor.formatOnSave": false,
     "emmet.includeLanguages": {
         "javascript": "javascriptreact",
-        "java": "java"
     },
     "[json]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "python.showStartPage": false,
     "workbench.sideBar.location": "right",
-    "terminal.integrated.shell": "bash",
+    //"terminal.integrated.shell": "zsh",
     "editor.suggestSelection": "first",
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "terminal.integrated.fontFamily": "SF Mono",
@@ -25,13 +24,23 @@
         "**/.settings": true,
         "**/.factorypath": true
     },
-    "[java]": {
-        "editor.defaultFormatter": "redhat.java"
-    },
     "workbench.editorAssociations": [
         {
             "viewType": "jupyter.notebook.ipynb",
             "filenamePattern": "*.ipynb"
         }
     ],
+    "explorer.confirmDelete": false,
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "terminal.integrated.defaultProfile.linux": "zsh",
+    "go.toolsManagement.autoUpdate": true,
+    "[markdown]": {
+        "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+    },
 }
+

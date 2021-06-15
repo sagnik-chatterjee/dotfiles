@@ -69,7 +69,8 @@ ZSH_THEME="cypher"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git
+    colored-man-pages)
 
 DEFAULT_USER='sagnik'
 
@@ -105,5 +106,8 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias vim=nvim
 alias tmx='~/Scripts/tmc'
+alias chromedriver='~/Scripts/chromedriver'
 alias chrome=google-chrome
+
+
 source /home/sagnik/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
